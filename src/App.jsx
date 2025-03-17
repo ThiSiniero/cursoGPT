@@ -19,7 +19,7 @@ function AppContent() {
 
   return <>
       <Navbar />
-      <div className={`${theme === "dark" ? "bg-gray-400" : "bg-gray-100"}`}>
+      <div className={`${theme === "dark" ? "bg-gray-400" : "bg-gray-300"}  min-h-screen`}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sobre" element={<Sobre />} />

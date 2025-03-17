@@ -10,7 +10,7 @@ function Navbar() {
   return (
     <nav>
 
-      <div className={`flex flex-col sm:flex-row justify-between items-center py-4 sm:py-6 mb-8 ${theme === "dark" ? "bg-gray-500 text-white" : "bg-gray-200 text-black"} font-bold`}>
+      <div className={`flex flex-col sm:flex-row justify-between items-center py-4 sm:py-6 mb-8 ${theme === "dark" ? "bg-gray-500 text-white" : "bg-gray-300 text-black"} font-bold`}>
 
         <div></div>
 
@@ -77,7 +77,7 @@ function Navbar() {
         <div className="hidden sm:block lg:pr-6">
           <button
             onClick={toggleTheme}
-            className={`px-4 py-2 rounded ${theme === "dark" ? "bg-gray-700 text-white" : "bg-gray-300 text-black"}`}
+            className={`px-4 py-2 rounded ${theme === "dark" ? "bg-gray-700 text-white" : "bg-gray-400 text-black"}`}
           >
             Modo {theme === "dark" ? "Escuro" : "Claro"}
           </button>
