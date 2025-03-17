@@ -1,7 +1,7 @@
 import "../index.css";
 
 function Contato(){
-    return <div className="flex items-center justify-center bg-gray-200 rounded-lg">
+    return <div className="flex items-center justify-center rounded-lg">
         <div className="p-6 text-center">   
             <h2 className="text-2xl font-bold py-2">Sobre Nós:</h2>
             <p className="max-w-7xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id eveniet inventore adipisci omnis odit perferendis incidunt perspiciatis qui voluptate numquam, delectus dolor doloribus, dolore quam. Ullam, illum. Possimus, suscipit odio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae culpa sequi nulla accusantium eligendi dolores eius suscipit placeat enim praesentium quo itaque odio earum, pariatur, exercitationem eveniet eos aperiam recusandae!</p>

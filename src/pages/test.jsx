@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import "../index.css";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Button from "../components/Button"
 
@@ -8,7 +10,6 @@ function Teste() {
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [message, setMessage] = useState('');
     const [editing, setEditing] = useState(false);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -34,18 +35,20 @@ function Teste() {
                 name,
                 email,
             });
-            setMessage(` ${response.data.id}: ${response.data.name} - ${response.data.email}`);
+            toast.success(
+                <div className='text-left'>
+                    <p>Usuário criado com sucesso</p>
+                    <p>{response.data.id}: {response.data.name} - {response.data.email}</p>
+                </div>
+            );
             console.log('Usuario criado:', response.data);
-            setTimeout(() => {
-                setMessage('')
-            }, 10000);
-
+            
             setName("");
             setEmail("");
             setEditing(false)
 
         } catch (e) {
-            setMessage('Erro ao criar o post.');
+            toast.error('Erro ao criar o post.');
             console.error('Erro:', e);
         }
     }
@@ -53,8 +56,8 @@ function Teste() {
     useEffect(() => {fetchUsers()}, []);
 
   
-    return (
-        <div className='flex flex-col items-center bg-gray-200 pb-12'>
+    return ( 
+        <div className='flex flex-col items-center pb-12'>
             <h1 className='text-3xl p-4 my-10 font-bold'>Usuarios:</h1>
             <ul className='bg-gray-100 mb-12 p-12 rounded-3xl border border-gray-500 shadow-xl'>
                 {error && <p className='text-center text-3xl font-bold'>ERRO: {error} </p>}
@@ -67,11 +70,6 @@ function Teste() {
                 ))}
             </ul>
             {!editing && <Button text="Adicionar Usuario" onClick={() => setEditing(true)} >Adicionar</Button>}
-
-            {message && <div className='item-center text-center my-6 bg-gray-100 rounded-lg text-green-600 text-lg p-4'>
-                <p>Usuario criado com sucesso! </p>
-                <p>{message}</p>
-            </div>}
 
             {editing && <div className="flex flex-col items-center p-4 bg-gray-100 rounded-3xl border border-gray-500 shadow-xl">
                 <h1 className="text-2xl font-bold mb-4">Criar Novo Post</h1>
@@ -88,7 +86,8 @@ function Teste() {
                     </div>
                     <div className="mb-4">
                     <label className="block text-gray-700">Email</label>
-                    <textarea
+                    <input
+                        type="text"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         className="w-full p-2 border border-gray-300 rounded"
@@ -112,8 +111,7 @@ function Teste() {
             <p>lembrar de adicionar a opção de vender q ira usar algo para confirmar se o produto pd ser vendido ou n pelo email</p>
             
       </div>
-        
     );
-    }
+}
 
 export default Teste;

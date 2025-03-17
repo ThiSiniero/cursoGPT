@@ -18,7 +18,7 @@ function ProdInfo() {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center bg-gray-200 pb-12 mb-10">
+        <div className="flex flex-col items-center justify-center pb-12 mb-10">
             <h2 className="p-4 font-bold text-3xl">Detalhes do Produto</h2>
             <h3 className="text-xl font-bold pb-10">{produto.name}</h3>
             <p>{produto.description}</p>
