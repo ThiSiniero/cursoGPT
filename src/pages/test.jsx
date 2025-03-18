@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import Button from "../components/Button"
+import Cart from '../components/Cart';
 
 function Teste() {
     const [users, setUsers] = useState([]);
@@ -56,8 +57,9 @@ function Teste() {
     useEffect(() => {fetchUsers()}, []);
 
   
-    return ( 
+    return <>
         <div className='flex flex-col items-center pb-12'>
+            <p>lembrar de adicionar a opção de vender q ira usar algo para confirmar se o produto pd ser vendido ou n pelo email</p>
             <h1 className='text-3xl p-4 my-10 font-bold'>Usuarios:</h1>
             <ul className='bg-gray-100 mb-12 p-12 rounded-3xl border border-gray-500 shadow-xl'>
                 {error && <p className='text-center text-3xl font-bold'>ERRO: {error} </p>}
@@ -108,10 +110,14 @@ function Teste() {
                 </form>
             </div>}
 
-            <p>lembrar de adicionar a opção de vender q ira usar algo para confirmar se o produto pd ser vendido ou n pelo email</p>
+            <div className="bg-white mt-20 p-4 w-[100%]"></div>
+
+            <div className='pt-[100px]'>
+                <Cart/>
+            </div>
             
-      </div>
-    );
+        </div>
+    </>
 }
 
 export default Teste;

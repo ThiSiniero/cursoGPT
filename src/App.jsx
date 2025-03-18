@@ -17,9 +17,10 @@ import ProdInfo from "./pages/prodInfo";
 function AppContent() {
   const { theme } = useContext(ThemeContext);
 
-  return <>
+  return (
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-      <div className={`${theme === "dark" ? "bg-gray-400" : "bg-gray-300"}  min-h-screen`}>
+      <div className={`${theme === "dark" ? "bg-gray-400" : "bg-gray-300"} flex-1`}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sobre" element={<Sobre />} />
@@ -30,7 +31,8 @@ function AppContent() {
           <Route path="/produtos/:id" element={<ProdInfo />} />
         </Routes>
       </div>
-    </>
+    </div>
+  );
 }
 
 function App() {
