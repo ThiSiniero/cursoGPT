@@ -1,10 +1,18 @@
 import "../index.css";
 import Product from "../components/ProductRedux";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { fetchProducts } from "../store/productsSlice";
 //import { ProductContext } from "../context/ProductContext";
 //import { useContext } from "react";
 
 function Produtos() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
+
   // const { products } = useContext(ProductContext);   // com ContextAPI
   // const qtdproducts = Object.keys(products).length;
   
