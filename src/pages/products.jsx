@@ -22,7 +22,15 @@ function Produtos() {
 
   return (
     <div className="p-4 sm:p-6">
-      <h1 className="text-2xl sm:text-3xl font-bold mb-6">Nossos Produtos</h1>
+      <div className="flex flex-col sm:flex-row justify-between items-center mb-4">
+        <h1 className="text-2xl sm:text-3xl font-bold mb-6">Nossos Produtos</h1>
+        <select className="p-2 rounded-t-xl" >
+          <option value="0">Todas categorias</option>
+          <option value="1">Peças de roupas</option>
+          <option value="2">Joias</option>
+          <option value="3">Eletronicos</option>
+        </select>
+      </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {ids.map((id) => (
             <Product key={id} id={id} />
