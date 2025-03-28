@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import Button from "../components/Button"
 import Cart from '../components/Cart';
+import ProductList from '../components/ProductRedux';
 
 function Teste() {
     const [users, setUsers] = useState([]);
@@ -77,24 +78,24 @@ function Teste() {
                 <h1 className="text-2xl font-bold mb-4">Criar Novo Post</h1>
                 <form onSubmit={handleSubmit} className="w-full max-w-md">
                     <div className="mb-4">
-                    <label className="block text-gray-700">Nome</label>
-                    <input
-                        type="text"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        className="w-full p-2 border border-gray-300 rounded "
-                        required
-                    />
+                        <label className="block text-gray-700">Nome</label>
+                        <input
+                            type="text"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            className="w-full p-2 border border-gray-300 rounded "
+                            required
+                        />
                     </div>
                     <div className="mb-4">
-                    <label className="block text-gray-700">Email</label>
-                    <input
-                        type="text"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        className="w-full p-2 border border-gray-300 rounded"
-                        required
-                    />
+                        <label className="block text-gray-700">Email</label>
+                        <input
+                            type="text"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            className="w-full p-2 border border-gray-300 rounded"
+                            required
+                        />
                     </div>
                     <button
                     type="submit"
@@ -116,6 +117,10 @@ function Teste() {
                 <Cart/>
             </div>
             
+        </div>
+
+        <div>
+        <ProductList/>
         </div>
     </>
 }

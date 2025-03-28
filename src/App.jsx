@@ -13,6 +13,7 @@ import Contato from "./pages/contact";
 import Teste from "./pages/test";
 import Page404 from "./pages/page404";
 import ProdInfo from "./pages/prodInfo";
+import ProdInfoRedux from "./pages/prodInfoRedux";
 
 function AppContent() {
   const { theme } = useContext(ThemeContext);
@@ -28,7 +29,7 @@ function AppContent() {
           <Route path="/produtos" element={<Produtos />} />
           <Route path="/teste" element={<Teste />} />
           <Route path="*" element={<Page404 />} />
-          <Route path="/produtos/:id" element={<ProdInfo />} />
+          <Route path="/produtos/:id" element={<ProdInfoRedux />} />
         </Routes>
       </div>
     </div>

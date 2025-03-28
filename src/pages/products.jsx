@@ -1,12 +1,16 @@
 import "../index.css";
-import Product from "../components/Product";
-import { ProductContext } from "../context/ProductContext";
-import { useContext } from "react";
+import Product from "../components/ProductRedux";
+import { useSelector } from "react-redux";
+//import { ProductContext } from "../context/ProductContext";
+//import { useContext } from "react";
 
 function Produtos() {
-  const { products } = useContext(ProductContext);
-  const qtdproducts = Object.keys(products).length;
-  const ids = Array.from({ length: qtdproducts }, (_, i) => i + 1);
+  // const { products } = useContext(ProductContext);   // com ContextAPI
+  // const qtdproducts = Object.keys(products).length;
+  
+  const { items } = useSelector((state) => state.products);
+  const qtdproducts = Object.keys(items).length;
+  const ids = Array.from({ length: qtdproducts }, (_, i) => i);
 
   return (
     <div className="p-4 sm:p-6">
