@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { ProductProvider } from "./context/ProductContext";
+//import { ProductProvider } from "./context/ProductContext";   //colocar em App() abaixo de ThemeProvider
 import { ThemeProvider, ThemeContext } from "./context/ThemeContext";
 import { useContext } from "react";
 
@@ -12,7 +12,7 @@ import Produtos from "./pages/products";
 import Contato from "./pages/contact";
 import Teste from "./pages/test";
 import Page404 from "./pages/page404";
-import ProdInfo from "./pages/prodInfo";
+//import ProdInfo from "./pages/prodInfo";
 import ProdInfoRedux from "./pages/prodInfoRedux";
 
 function AppContent() {
@@ -39,10 +39,10 @@ function AppContent() {
 function App() {
   return (
     <ThemeProvider>
-      <ProductProvider>
+
         <AppContent />
         <ToastContainer />
-      </ProductProvider>
+  
     </ThemeProvider>
   );
 }
