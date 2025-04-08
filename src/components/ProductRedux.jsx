@@ -1,23 +1,17 @@
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { fetchProducts } from "../store/productsSlice";
+import { useSelector } from "react-redux";
 
-function ProductList(id) {
-    const dispatch = useDispatch();
+function ProductList({id}) {
+
     const { items, status, error } = useSelector((state) => state.products);
-    const produto = items[id.id];
-    const sales = useSelector((state) => state.sales[id.id]);
-   
-    useEffect(() => {
-        dispatch(fetchProducts());
-    }, [dispatch]);
+    const produto = items.find((p) => p.id === id);
+    const sales = useSelector((state) => state.sales[id]);
 
     if (status === 'loading') return <p>Carregando...</p>;
     if (status === 'failed') return <p>Erro: {error}</p>;
 
     return (
-      <Link to={`/produtos/${id.id}`} state={{ produto }} className="flex items-start gap-4 p-4 rounded bg-white shadow hover:shadow-lg transition hover:scale-105">
+      <Link to={`/produtos/${produto.id}`} state={{ produto }} className="flex items-start gap-4 p-4 rounded bg-white shadow hover:shadow-lg transition hover:scale-105">
       <img className='w-24 h-24 object-contain' src={produto.image} alt={produto.title} />
       <div className="flex-1">
         <h2 className="font-bold text-xl mb-2">{produto.title}</h2>

@@ -9,7 +9,9 @@ import { addSale } from "../store/salesSlice";
 
 function ProdInfo() {
     const { id } = useParams();
-    const produto = useSelector((state) => state.products.items[id]);
+    const produto = useSelector((state) =>
+        state.products.items.find((p) => p.id === Number(id))
+      );
     const sales = useSelector((state) => state.sales[id]);
     
     const dispatch = useDispatch();

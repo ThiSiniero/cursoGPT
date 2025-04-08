@@ -6,7 +6,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import Button from "../components/Button"
 import Cart from '../components/Cart';
-import ProductList from '../components/ProductRedux';
 
 function Teste() {
     const [users, setUsers] = useState([]);
@@ -120,7 +119,6 @@ function Teste() {
         </div>
 
         <div>
-        <ProductList/>
         </div>
     </>
 }

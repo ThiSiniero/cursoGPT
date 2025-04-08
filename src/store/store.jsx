@@ -1,5 +1,4 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { thunk } from 'redux-thunk';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { combineReducers } from 'redux';
@@ -22,7 +21,14 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = configureStore({
   reducer: persistedReducer,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        // Ignora verificação de serialização para ações do redux-persist
+        ignoredActions: ['persist/PERSIST', 'persist/REHYDRATE'],
+        ignoredPaths: ['register', 'rehydrate'],
+      },
+    }),
 });
 
 export const persistor = persistStore(store);
