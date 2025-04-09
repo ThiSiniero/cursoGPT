@@ -23,12 +23,14 @@ function Login() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="p-6">
-      <h2 className="text-2xl mb-4">Login</h2>
-      <input type="text" placeholder="Usuário" value={username} onChange={(e) => setUsername(e.target.value)} className="block mb-2 border p-2" />
-      <input type="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} className="block mb-4 border p-2" />
-      <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">Entrar</button>
-    </form>
+    <div className="flex flex-col items-center h-screen">
+      <form onSubmit={handleSubmit} className=" text-center border border-gray-400 rounded-lg shadow-lg p-6 bg-gray-300 mt-20">
+        <h2 className="text-3xl my-8">Login</h2>
+        <input type="text" placeholder="Usuário" value={username} onChange={(e) => setUsername(e.target.value)} className="block border px-6 py-2 border border-gray-400 rounded-xl" />
+        <input type="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} className="block my-6 border px-6 py-2 border border-gray-400 rounded-xl" />
+        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded mt-6">Entrar</button>
+      </form>
+    </div>
   );
 }
 

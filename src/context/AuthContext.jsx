@@ -2,20 +2,25 @@ import { createContext, useContext, useState, useEffect } from "react";
 
 export const AuthContext = createContext();
 
+const ahthorizedUsers = [
+  { username: "thiago", password: "123" },
+  { username: "admin", password: "admin" },
+  { username: "user", password: "user" },
+];
+
 export function AuthProvider({ children }) {
-  const [user, setUser] = useState(() => {
-    const savedUser = localStorage.getItem("user");
-    return savedUser ? JSON.parse(savedUser) : null;
-  });
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     localStorage.setItem("user", JSON.stringify(user));
   }, [user]);
 
   const login = (username, password) => {
-    // Simulação de login
-    if (username === "admin" && password === "123") {
-      setUser({ username: "admin" });
+    const foundUser = ahthorizedUsers.find(
+      (user) => user.username === username && user.password === password
+    );
+    if (foundUser) {
+      setUser(foundUser);
       return true;
     }
     return false;

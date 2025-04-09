@@ -8,6 +8,8 @@ function Navbar() {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const [isOpen, setIsOpen] = useState(false);
   const { user, logout } = useAuth();
+  console.log(user);
+  
 
   const login = () => {
     return !user ? ( 
