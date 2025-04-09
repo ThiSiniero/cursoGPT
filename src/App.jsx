@@ -14,6 +14,8 @@ import Teste from "./pages/test";
 import Page404 from "./pages/page404";
 //import ProdInfo from "./pages/prodInfo";
 import ProdInfoRedux from "./pages/prodInfoRedux";
+import Login from "./pages/login";
+import { PrivateRoute as Pv } from "./components/PrivateRoute";
 
 function AppContent() {
   const { theme } = useContext(ThemeContext);
@@ -27,9 +29,11 @@ function AppContent() {
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/contato" element={<Contato />} />
           <Route path="/produtos" element={<Produtos />} />
-          <Route path="/teste" element={<Teste />} />
+          {/* <Route path="/teste" element={<Teste />} /> */}
           <Route path="*" element={<Page404 />} />
           <Route path="/produtos/:id" element={<ProdInfoRedux />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/teste" element={<Pv> <Teste/> </Pv>} />
         </Routes>
       </div>
     </div>
