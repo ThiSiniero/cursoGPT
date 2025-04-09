@@ -1,7 +1,8 @@
 import "../index.css";
 import Product from "../components/ProductRedux";
-import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useSelector,useDispatch } from "react-redux";
+import { useState, useEffect } from "react";
+import { fetchProducts } from "../store/productsSlice";
 
 //import { ProductContext } from "../context/ProductContext";
 //import { useContext } from "react";
@@ -10,6 +11,12 @@ function Produtos() {
   const { items } = useSelector((state) => state.products);
   const [category, setCategory] = useState("all");
   const filtredItems = category == "all" ? items : items.filter((produto) => produto.category === category);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
+  
 
   return (
     <div className="p-4 sm:p-6">
