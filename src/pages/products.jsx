@@ -21,8 +21,8 @@ function Produtos() {
   return (
     <div className="p-4 sm:p-6">
       <div className="flex flex-col sm:flex-row justify-between items-center mb-4">
-        <h1 className="text-2xl sm:text-3xl font-bold mb-6">Nossos Produtos</h1>
-        <select className="p-2 rounded-t-xl" onChange={(e) => setCategory(e.target.value)} value={category}>
+        <h1 className="text-2xl sm:text-5xl font-bold mb-6">Nossos Produtos</h1>
+        <select className="p-2 sm:text-lg rounded-t-xl" onChange={(e) => setCategory(e.target.value)} value={category}>
           <option value="all">Todas categorias</option>
           <option value="men's clothing">Roupas masculinas</option>
           <option value="women's clothing">Roupas femininas</option>
