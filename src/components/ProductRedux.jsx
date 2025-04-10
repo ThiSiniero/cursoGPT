@@ -16,7 +16,7 @@ function ProductList({id}) {
       <div className="flex-1">
         <h2 className="font-bold text-xl mb-2">{produto.title}</h2>
         <p className="text-gray-600 text-sm mb-2 line-clamp-3">{produto.description}</p>
-        <div className='flex justify-between'>
+        <div className='flex flex-col lg:flex-row lg:justify-between'>
           <p className="text-green-600 font-bold">R$ {produto.price}</p>
           <p className='text-red-600 font-semibold text-sm'>Produtos Vendidos: {sales || 0}</p>
           <div className="flex items-center">

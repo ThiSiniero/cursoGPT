@@ -8,7 +8,6 @@ function Product({ id }){
     const {products} = useContext(ProductContext);
     const produto = products[id];
 
-    console.log(produto);
     
     return (
         <Link to={`/produtos/${id}`} state={{ produto }}  className="border p-4 rounded bg-white shadow hover:shadow-lg transition hover:scale-105">
