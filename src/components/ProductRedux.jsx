@@ -14,7 +14,7 @@ function ProductList({id}) {
       <Link to={`/produtos/${produto.id}`} state={{ produto }} className="flex items-start gap-4 p-4 rounded bg-white shadow hover:shadow-lg transition hover:scale-105">
       <img className='w-24 h-24 object-contain' src={produto.image} alt={produto.title} />
       <div className="flex-1">
-        <h2 className="font-bold lg:text-xl text-2xl mb-2 line-clamp-2">{produto.title}</h2>
+        <h2 className="font-bold lg:text-lg text-2xl mb-2 line-clamp-2">{produto.title}</h2>
         <p className="text-gray-600 lg:text-sm text-lg mb-2 line-clamp-4">{produto.description}</p>
         <div className='flex flex-col lg:flex-row lg:justify-between'>
           <p className="text-green-600 font-bold">R$ {produto.price}</p>

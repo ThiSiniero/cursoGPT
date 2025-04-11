@@ -24,14 +24,11 @@ function Navbar() {
 
   return (
     <nav>
-      <div className={`flex flex-col lg:flex-row justify-between items-center py-4 sm:py-10 mb-8 ${theme === "dark" ? "bg-gray-500 text-white" : "bg-gray-300 text-black"} font-bold`}>
+      <div className={`border-b lg:border-none border-gray-600 flex flex-col lg:flex-row justify-between items-center lg:py-4 py-10 mb-8 ${theme === "dark" ? "bg-gray-500 text-white" : "bg-gray-300 text-black"} font-bold`}>
 
         {/* Botão de tema para desktop (aparece a partir de lg: 1024px) */}
         <div className="hidden lg:block lg:pl-6">
-          <button
-            onClick={toggleTheme}
-            className={`px-4 py-2 rounded ${theme === "dark" ? "bg-gray-700 text-white" : "bg-gray-400 text-black"}`}
-          >
+          <button onClick={toggleTheme} className={`px-4 py-2 rounded ${theme === "dark" ? "bg-gray-700 text-white" : "bg-gray-400 text-black"}`}>
             Modo {theme === "dark" ? "Escuro" : "Claro"}
           </button>
         </div>
@@ -60,12 +57,12 @@ function Navbar() {
 
         </div>
 
-        <div className={`${isOpen ? "block mt-14  " : "hidden"} lg:flex flex-col lg:flex-row lg:space-y-0 lg:space-x-4 md:space-x-[5%] lg:pl-20 w-full lg:w-auto px-4 lg:px-0 text-center`}>
-          <Link className="px-4 lg:px-8 py-2 lg:py-0 lg:text-base text-2xl" to="/">Home</Link>
-          <Link className="px-4 lg:px-8 py-2 lg:py-0 lg:text-base text-2xl" to="/produtos">Produtos</Link>
-          <Link className="px-4 lg:px-8 py-2 lg:py-0 lg:text-base text-2xl" to="/vender">Vender</Link>
-          <Link className="px-4 lg:px-8 py-2 lg:py-0 lg:text-base text-2xl" to="/teste">Teste</Link>
-          <Link className="px-4 lg:px-8 py-2 lg:py-0 lg:text-base text-2xl" to="/contato">Contato</Link>
+        <div className={`${isOpen ? "block mt-8 lg:mt-4 " : "hidden"} border-t lg:border-none pt-6 lg:pt-0 border-gray-600 lg:flex flex-col lg:flex-row  lg:space-x-4 lg:pl-20 w-full lg:w-auto px-4 lg:px-0 text-center`}>
+          <Link className="px-4 lg:px-8 py-2 lg:py-0 lg:pb-4 lg:text-lg text-2xl" to="/">Home</Link>
+          <Link className="px-4 lg:px-8 py-2 lg:py-0 lg:text-lg text-2xl" to="/produtos">Produtos</Link>
+          <Link className="px-4 lg:px-8 py-2 lg:py-0 lg:text-lg text-2xl" to="/vender">Vender</Link>
+          <Link className="px-4 lg:px-8 py-2 lg:py-0 lg:text-lg text-2xl" to="/teste">Teste</Link>
+          <Link className="px-4 lg:px-8 py-2 lg:py-0 lg:text-lg text-2xl" to="/contato">Contato</Link>
         </div>
 
         <div className="hidden lg:block lg:mr-6">

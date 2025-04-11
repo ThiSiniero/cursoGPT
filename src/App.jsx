@@ -15,6 +15,7 @@ import Page404 from "./pages/page404";
 //import ProdInfo from "./pages/prodInfo";
 import ProdInfoRedux from "./pages/prodInfoRedux";
 import Login from "./pages/login";
+import Sell from "./pages/sell";
 import { PrivateRoute as Pv } from "./components/PrivateRoute";
 
 function AppContent() {
@@ -33,7 +34,8 @@ function AppContent() {
           <Route path="*" element={<Page404 />} />
           <Route path="/produtos/:id" element={<ProdInfoRedux />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/teste" element={<Pv> <Teste/> </Pv>} />
+          <Route path="/teste" element={<Teste/>} />
+          <Route path="/vender" element={<Pv> <Sell/> </Pv>}/>
         </Routes>
       </div>
     </div>

@@ -5,16 +5,18 @@ import { combineReducers } from 'redux';
 
 import productsReducer from './productsSlice';
 import salesReducer from './salesSlice';
+import usersReducer from './usersSlice';
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['products', 'sales'],
+  whitelist: ['products', 'sales', 'users'], // Lista de reducers a serem persistidos
 };
 
 const rootReducer = combineReducers({
   products: productsReducer,
-  sales: salesReducer
+  sales: salesReducer,
+  users: usersReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
