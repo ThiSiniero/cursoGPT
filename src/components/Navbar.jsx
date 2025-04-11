@@ -57,7 +57,7 @@ function Navbar() {
 
         </div>
 
-        <div className={`${isOpen ? "block mt-8 lg:mt-4 " : "hidden"} border-t lg:border-none pt-6 lg:pt-0 border-gray-600 lg:flex flex-col lg:flex-row  lg:space-x-4 lg:pl-20 w-full lg:w-auto px-4 lg:px-0 text-center`}>
+        <div className={`${isOpen ? "block mt-8 lg:mt-4 " : "hidden"} border-t lg:border-none pt-10 lg:pt-0 border-gray-600 lg:flex flex-col lg:flex-row  lg:space-x-4 lg:pl-20 w-full lg:w-auto px-4 lg:px-0 text-center`}>
           <Link className="px-4 lg:px-8 py-2 lg:py-0 lg:pb-4 lg:text-lg text-2xl" to="/">Home</Link>
           <Link className="px-4 lg:px-8 py-2 lg:py-0 lg:text-lg text-2xl" to="/produtos">Produtos</Link>
           <Link className="px-4 lg:px-8 py-2 lg:py-0 lg:text-lg text-2xl" to="/vender">Vender</Link>

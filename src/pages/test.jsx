@@ -32,7 +32,7 @@ function Teste() {
                                 <div className="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
                             </div>}
                 {!error && status == "succeeded" && items.map(user => (
-                <li key={user.id}>{user.id}: {user.name} - {user.email}</li>
+                <li key={user.id} className='lg:text-lg text-2xl'><b>{user.id}:</b> {user.name} - {user.email}</li>
                 ))}
             </ul>
             {!editing && <Button text="Adicionar Usuario" onClick={() => setEditing(true)} >Adicionar</Button>}
