@@ -30,6 +30,10 @@ function Login() {
         <input type="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} className="block my-6 border px-6 py-2 border border-gray-400 rounded-xl" />
         <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded mt-6">Entrar</button>
       </form>
+
+      <div className="mt-4 text-center bg-red-300 rounded rounded-lg shadow-lg p-2 mx-4">
+        <p>Como isto é um teste, vá até a seção TESTE e copie um nome e o id de algum dos usuários, o nome servirá como usuário e o id como senha. <br /> Usuário: Chelsey Dietrich - Senha: 5</p>
+      </div>
     </div>
   );
 }
